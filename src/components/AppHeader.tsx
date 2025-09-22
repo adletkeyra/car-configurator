@@ -2,31 +2,29 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu"
 import { Menu } from "lucide-react"
+import { useLocation } from "wouter"
+
 
 function Header() {
+    const [location, setLocation] = useLocation();
     return (
         <header className="w-full border-b bg-white shadow-sm">
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
 
                 {/* Logo */}
-                <div className="text-xl font-bold">Car Configurator</div>
+                <div onClick={() => setLocation('/')} className="text-xl font-bold">Car Configurator</div>
 
                 {/* Desktop menu */}
                 <NavigationMenu className="hidden md:flex">
                     <NavigationMenuList className="flex space-x-6">
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/" className="text-sm font-medium">
+                            <NavigationMenuLink onClick={() => setLocation('/')} className="text-sm font-medium">
                                 Home
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink href="/about" className="text-sm font-medium">
-                                About
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink href="/contact" className="text-sm font-medium">
-                                Contact
+                            <NavigationMenuLink onClick={() => setLocation('/catalog')} className="text-sm font-medium">
+                                Catalog
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
