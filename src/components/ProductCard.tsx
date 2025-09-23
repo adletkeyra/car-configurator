@@ -1,6 +1,6 @@
 import {Card, CardContent, CardFooter} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import Price from "@/pages/Price";
+import Price from "@/components/Price";
 import {useLocation} from "wouter";
 
 function ProductCard ({product}){
