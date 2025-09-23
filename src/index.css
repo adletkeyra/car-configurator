@@ -69,11 +69,11 @@ body {
 
 
 button {
-  padding: 1em 2.5em;
+  padding: 1em 2em;
   font-size: 1em;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,8 +91,17 @@ button {
   width: auto;
   min-width: min-content;
 }
+button.type-outline{
+  background: #fff;
+  color: #000;
+}
 button:hover {
-  border-color: #646cff;
+  background-color: #535457;
+  border-color: #535457;
+}
+button.type-outline:hover{
+  border-color: #6B6D70;
+  background-color: rgba(148, 149, 152, .18);
 }
 button:focus,
 button:focus-visible {

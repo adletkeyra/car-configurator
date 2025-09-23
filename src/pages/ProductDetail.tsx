@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import {ReactNode, useState} from "react";
 import Price from "@/components/Price";
 import {Badge} from "@/components/ui/badge";
 import ProductMainFeatures from "@/components/ProductMainFeatures";
@@ -21,7 +20,7 @@ interface Product {
         consumption: string,
         dimensions: string,
     },
-    features: string[],
+    features: object[],
     media: {
         baseLayer: string,
         views: string[],
@@ -50,7 +49,20 @@ function ProductDetail({slug}){
                 consumption: "7.8 L/100km",
                 dimensions: "4310 x 1796 x 1426 mm",
             },
-            features: ['Gasoline'],
+            features: [
+                {
+                    name: '0 - 60 mph',
+                    value: '6.9s'
+                },
+                {
+                    name: 'Max. engine power',
+                    value: '388 hp'
+                },
+                {
+                    name: 'Top track speed',
+                    value: '183 mph'
+                }
+            ],
             media: {
                 baseLayer: "/layers/astra-gt/base.png",
                 views: ["front", "side", "rear"],
@@ -72,7 +84,7 @@ function ProductDetail({slug}){
             <div className="main-image-wrapper mt-16">
                     <img src={product.media.images[0]} />
             </div>
-            <div className="main-product-info-wrapper max-w-7xl mx-auto p-6 text-center">
+            <div className="main-product-info-wrapper max-w-7xl mx-auto p-6 pl-12 pr-12 text-center">
                 <div className="brand-name">
                     <h3 className={'text-3xl'}>{product.brand}</h3>
                 </div>
@@ -87,18 +99,18 @@ function ProductDetail({slug}){
                 <div className="price-wrapper text-xl mt-3 mb-4">
                     <span>From</span>
                     <Price value={product.basePrice} />
-                    <sup>1</sup>
+                    <sup className={'text-sm'}>1</sup>
                 </div>
                 <div className="buttons-wrapper mb-7">
                     <Button onClick={() => setLocation('/configure/' + product.slug)}>Configure</Button>
                 </div>
                 <div className="additional-text">
-                    <p className={'text-gray-600'}>
-                        1Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges; potential tariffs. Dealer sets actual selling price.
+                    <p className={'text-xs text-gray-600'}>
+                        <sup>1</sup> Manufacturer’s Suggested Retail Price. Excludes options; taxes; title; registration; delivery, processing and handling fee; dealer charges; potential tariffs. Dealer sets actual selling price.
                     </p>
                 </div>
             </div>
-            <ProductMainFeatures product={product} />
+            <ProductMainFeatures features={product.features} image={product.media.images[1]} model={product.model} />
         </div>
     )
 }

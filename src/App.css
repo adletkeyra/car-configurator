@@ -19,3 +19,7 @@ a{
   margin-top: calc(var(--spacing) * 6);
   margin-bottom: calc(var(--spacing) * 9);
 }
+
+sup{
+  font-weight: bold;
+}
