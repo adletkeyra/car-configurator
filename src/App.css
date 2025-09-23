@@ -12,3 +12,8 @@ body{
 a{
   cursor: pointer;
 }
+
+.head-wrapper{
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 9);
+}
