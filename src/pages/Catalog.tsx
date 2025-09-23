@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import ProductCard from "@/pages/ProductCard";
+import ProductCard from "@/components/ProductCard";
 
 const catalogData = [
     {
@@ -69,7 +69,7 @@ function Catalog() {
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {pageProducts.map((p) => (
-                    <ProductCard product={p} />
+                    <ProductCard key={p.slug} product={p} />
                 ))}
             </div>
 
