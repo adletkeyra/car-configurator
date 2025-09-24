@@ -4,7 +4,7 @@ import {Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger}
 function ProductMainFeatures ({features, image, model}){
 
     return(
-        <div className="main-features-wrapper grid grid-cols-2 max-w-7xl mx-auto p-6 pt-24 pb-24">
+        <div className="main-features-wrapper grid grid-cols-2 max-w-7xl mx-auto p-6 pt-24 pb-0">
             <div className="info-wrapper flex flex-col justify-around">
                 {features.slice(0, 3).map((feature) => (
                     <div key={feature.name} className="feature">

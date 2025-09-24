@@ -20,5 +20,31 @@
       margin-left: 8px;
     }
   }
+}
 
+.swiper.swiper-horizontal{
+  padding: calc(var(--spacing) * 12) calc(var(--spacing) * 6) calc(var(--spacing) * 16);
+}
+.swiper .swiper-pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 8px;
+  gap: 8px;
+  transition: transform 0.4s;
+  .swiper-pagination-bullet{
+    border-radius: 4px;
+    background: #6B6D70;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    transition: background-color 0.4s, width 0.4s;
+    margin: 0!important;
+    &.swiper-pagination-bullet-active{
+      background: #010205;
+      height: 8px;
+      width: 20px !important;
+    }
+  }
 }
