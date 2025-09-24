@@ -67,29 +67,9 @@ body {
   min-height: 100vh;
 }
 
-
 button {
-  padding: 1em 2em;
-  font-size: 1em;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  appearance: none;
-  text-decoration: none;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  border: 2px solid rgb(1, 2, 5);
-  border-radius: 4px;
-  background-color: rgb(1, 2, 5);
-  color: rgb(251, 252, 255);
-  max-height: unset;
-  height: auto;
-  width: auto;
-  min-width: min-content;
 }
 button.type-outline{
   background: #fff;
@@ -97,15 +77,9 @@ button.type-outline{
 }
 button:hover {
   background-color: #535457;
-  border-color: #535457;
 }
 button.type-outline:hover{
-  border-color: #6B6D70;
   background-color: rgba(148, 149, 152, .18);
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
