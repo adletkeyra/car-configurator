@@ -3,12 +3,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import ProductCard from "@/components/ProductCard";
 
-const catalogData = [
+interface Product {
+    id: number,
+    slug: string,
+    brand: string,
+    model: string,
+    basePrice: number,
+    media:{
+        baseLayer: string,
+        views: string[],
+        viewLayers: object
+    }
+}
+
+const catalogData: Product[] = [
     {
         id: 1,
         slug: "toyota-corolla",
         brand: 'Toyota',
-        name: 'Corolla',
+        model: 'Corolla',
         basePrice: 28500,
         media: {
             baseLayer: "/layers/astra-gt/base.png",
@@ -20,7 +33,7 @@ const catalogData = [
         id: 2,
         slug: "toyota-camry",
         brand: 'Toyota',
-        name: 'Camry',
+        model: 'Camry',
         basePrice: 38000,
         media: {
             baseLayer: "/layers/astra-gt/base.png",
@@ -32,7 +45,7 @@ const catalogData = [
         id: 3,
         slug: "vw-golf",
         brand: 'Volkswagen',
-        name: 'Golf',
+        model: 'Golf',
         basePrice: 30000,
         media: {
             baseLayer: "/layers/astra-gt/base.png",
@@ -44,7 +57,7 @@ const catalogData = [
         id: 4,
         slug: "vw-passat",
         brand: 'Volkswagen',
-        name: 'Passat',
+        model: 'Passat',
         basePrice: 35000,
         media: {
             baseLayer: "/layers/astra-gt/base.png",

@@ -16,7 +16,7 @@ function ProductCard ({product}){
             <CardContent className="p-4">
                 <div className="flex items-start justify-between">
                     <div>
-                        <h3 className="font-medium text-sm">{product.brand} {product.name}</h3>
+                        <h3 className="font-medium text-sm">{product.brand} {product.model}</h3>
                         <p className="text-xs text-muted-foreground mt-1">Slug: {product.slug}</p>
                     </div>
                     <div className="text-right font-semibold">
